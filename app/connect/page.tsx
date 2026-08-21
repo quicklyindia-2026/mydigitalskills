@@ -1,116 +1,87 @@
 import type { Metadata } from "next";
-import { MetaLeadForm } from "@/components/MetaLeadForm";
-import { PerformanceVisual } from "@/components/AnimatedVisuals";
+import { GrowthAuditForm, LandingTracker, TrackedWhatsAppLink } from "@/components/GrowthAuditForm";
 
 export const metadata: Metadata = {
-  title: "Meta Ads & Performance Marketing Expert | Lambodar Patra",
-  description: "Get Meta Ads and performance marketing support from Lambodar Patra, with 7+ years of multi-industry experience and approximately ₹1 crore in ad budget handled.",
+  title: "Lambodar Patra | Business Growth & Digital Marketing Strategist",
+  description: "Get a free business growth audit with Lambodar Patra. Strategy-first support for performance marketing, branding, Google visibility, websites, lead generation and scalable growth systems.",
   alternates: { canonical: "/connect" },
-  openGraph: {
-    title: "Scale with Meta Ads — Lambodar Patra",
-    description: "7+ years of Meta Ads and performance marketing experience across education, hospitality, real estate and service businesses.",
-    images: [{ url: "/images/lambodar-digital.png?v=20260821e", width: 1024, height: 1024 }],
-  },
+  openGraph: { title: "Lambodar Patra | Business Growth Strategist", description: "Let’s find what is stopping your business from growing—and build a system to fix it.", type: "website", images: [{ url: "/images/growth/lambodar-strategist.png", width: 1230, height: 1536, alt: "Lambodar Patra, Business Growth Strategist" }] },
 };
 
+const channels = [
+  ["Meta Ads", "Performance campaigns for qualified enquiries."], ["Instagram", "Content and discovery that builds brand recall."], ["Facebook", "Local reach, retargeting and lead generation."], ["Google", "Capture customers with active intent."], ["YouTube", "Education and video-led trust building."], ["Website", "Convert attention into enquiry and action."], ["SEO", "Build discoverability that compounds over time."], ["Google Business", "Improve local visibility, calls and direction actions."], ["WhatsApp", "Move enquiries into direct conversations."], ["Swiggy", "Improve restaurant discovery and order visibility."], ["Zomato", "Strengthen hospitality offers and local demand."], ["Lead Generation", "Create structured enquiry journeys."], ["Branding", "Build a memorable and credible market position."], ["Automation", "Improve follow-up, tracking and response speed."],
+];
+const problems = [["↘", "Low Sales?"], ["◎", "Not Getting Leads?"], ["₹", "Running Ads But No Results?"], ["G", "Poor Google Visibility?"], ["#", "Social Media Not Growing?"], ["↗", "Website Not Converting?"], ["?", "No Clear Marketing Strategy?"], ["⚡", "Competitors Growing Faster?"]];
+const services = [
+  ["01", "Performance Marketing", "Meta Ads · Facebook Ads · Instagram Ads · Lead Generation · Retargeting · Campaign Optimization"],
+  ["02", "Social Media & Branding", "Social Media Strategy · Content Strategy · Creative Design · Reels · Brand Positioning · Campaign Planning"],
+  ["03", "Google Growth", "Google Business Profile · Local SEO · Google Ads · Review Strategy · Search Visibility"],
+  ["04", "Website & Technology", "Landing Pages · Corporate Websites · E-commerce · App Development · Automation · Conversion Optimization"],
+  ["05", "Restaurant & Hospitality Growth", "Swiggy · Zomato · Restaurant Marketing · Reservations · Local Marketing · Event Promotion"],
+  ["06", "Business Growth Strategy", "Digital Audit · Competitor Research · Marketing Funnel · Lead Strategy · Automation · Growth Roadmap"],
+];
+const industries = ["Hospitality", "Restaurants", "Construction", "Education", "Local Businesses", "Service Businesses", "E-commerce", "Real Estate", "Marketplaces"];
+const journey = ["Digital Marketing", "Social Media & Branding", "Performance Marketing", "Lead Generation", "Business Strategy", "Technology & Automation", "Complete Business Growth"];
 const portfolio = [
-  { sector: "Education", names: "Brain Bunny Juniors International Preschool", result: "Brand, lead generation and franchise-focused growth campaigns." },
-  { sector: "Hospitality & F&B", names: "Carnivale, Moire, Spicy Vibes, The Flavor Express, Chaat Di Hatti", result: "Offer-led campaigns, event promotion, bookings and local customer acquisition." },
-  { sector: "Real Estate", names: "Link House Buildwell, Flora Heritage, Vrinda Heritage, Trinity Venture, KPS Town Central, Dholera Group", result: "Project-focused lead generation and buyer enquiry campaigns." },
-  { sector: "Service & Platforms", names: "Shree Ganesh Enterprises, SGE Machinery, Quickly India", result: "Digital presence, enquiry generation and growth-system support." },
+  ["Education", "Brain Bunny Juniors International Preschool", "Brand growth, digital strategy and franchise-focused marketing."],
+  ["Hospitality", "Carnivale · Moire · Spicy Vibes · The Flavor Express · Chaat Di Hatti", "Offer communication, event promotion, digital visibility and enquiry systems."],
+  ["Real Estate", "Link House Buildwell · Flora Heritage · Vrinda Heritage · Trinity Venture · KPS Town Central · Dholera Group", "Project-focused advertising and buyer-enquiry campaigns."],
+  ["Service & Platforms", "Shree Ganesh Enterprises · SGE Machinery · Quickly India", "Web presence, lead systems and digital growth support."],
+];
+const faqs = [
+  ["Can you help a small or local business?", "Yes. The strategy is built around your market, customer, location, budget and immediate business priority."],
+  ["Do you only manage social media?", "No. Social media is only one channel. I connect branding, advertising, Google, websites, lead generation, follow-up and technology around the business goal."],
+  ["Can you generate leads through Meta Ads?", "Yes. Support can include offer planning, audience strategy, campaign structure, creatives, landing pages, qualification and optimization. Results depend on the market, offer, budget and follow-up."],
+  ["Can you improve my Google Business Profile?", "Yes. I can review profile completeness, category positioning, content, local visibility, reviews and conversion actions."],
+  ["Do you build websites and apps?", "Yes. I provide landing pages, business websites, portals and app-development support designed around real business use cases."],
+  ["Do you work with restaurants?", "Yes. My experience includes restaurant and hospitality marketing, Swiggy/Zomato visibility, events, bookings, offers and local acquisition."],
+  ["How much does your service cost?", "Every business has different requirements. After understanding the business and objectives, I recommend the most suitable strategy and scope."],
+  ["How does the free audit work?", "Submit the short form. I review your visible digital presence, we have a focused discussion, and I share the most important growth direction—without obligation."],
 ];
 
-const faq = [
-  ["Can you manage my complete Meta Ads campaign?", "Yes. Support can cover strategy, campaign structure, audience planning, creative direction, lead forms, tracking, optimization and performance reporting."],
-  ["Do you guarantee a fixed number of leads or sales?", "No ethical performance marketer can guarantee a fixed result before reviewing the offer, market, budget and sales process. The focus is on systematic testing, measurement and continuous improvement."],
-  ["What ad budget should I start with?", "The right starting budget depends on your industry, location, offer and lead value. After a short discussion, you will receive a practical test-budget recommendation."],
-  ["Can you audit campaigns already running?", "Yes. Existing campaign structure, creatives, audience, tracking, cost per result and lead quality can be reviewed before recommending changes."],
-  ["Which businesses do you work with?", "Experience includes education, hospitality, real estate, service businesses, local brands, construction and digital platforms."],
-];
-
-export default function MetaAdsLandingPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Meta Ads & Performance Marketing Support",
-    provider: { "@type": "Person", name: "Lambodar Patra", url: "https://www.mydigitalskills.in/connect" },
-    areaServed: "India",
-    serviceType: "Meta Ads Management and Performance Marketing",
-  };
-
+export default function BusinessGrowthLandingPage() {
+  const schema = { "@context": "https://schema.org", "@type": "ProfessionalService", name: "Lambodar Patra — Business Growth Strategy", url: "https://mydigitalskills.in/connect", areaServed: "India", founder: { "@type": "Person", name: "Lambodar Patra", jobTitle: "Business Growth & Digital Marketing Strategist" }, serviceType: ["Business Growth Strategy", "Performance Marketing", "Digital Marketing", "Lead Generation", "Website Consulting"] };
   return (
-    <main className="meta-lp">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <header className="meta-nav">
-        <a href="#top" aria-label="MyDigitalSkills home"><img src="/images/mydigitalskills-logo-v3.jpg?v=20260821e" alt="MyDigitalSkills" /></a>
-        <a className="meta-nav-cta" href="https://wa.me/918128729003?text=Hi%20Lambodar%2C%20I%20need%20help%20with%20Meta%20Ads." target="_blank" rel="noreferrer">WhatsApp: +91 81287 29003</a>
-      </header>
+    <main className="growth-lp" id="top">
+      <LandingTracker /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <header className="growth-nav"><a href="#top" aria-label="MyDigitalSkills home"><img src="/images/mydigitalskills-logo-v3.jpg?v=growth2026" alt="MyDigitalSkills" /></a><div><a href="#work">Work</a><a href="#services">Services</a><a href="#audit">Free Audit</a></div><TrackedWhatsAppLink className="growth-nav-cta" placement="header">WhatsApp Me</TrackedWhatsAppLink></header>
 
-      <section className="meta-hero" id="top">
-        <div className="meta-container meta-hero-grid">
-          <div className="meta-hero-copy">
-            <div className="meta-kicker"><span>●</span> META ADS & PERFORMANCE MARKETING</div>
-            <h1>Stop burning ad budget. Build a system for <em>qualified leads.</em></h1>
-            <p>I help businesses plan, launch and optimize Facebook & Instagram campaigns—connecting the right creative, audience, landing page and follow-up system.</p>
-            <div className="meta-proof-row">
-              <div><strong>7+</strong><span>Years in digital growth</span></div>
-              <div><strong>≈₹1 Cr</strong><span>Ad budget handled</span></div>
-              <div><strong>5+</strong><span>Industries served</span></div>
-            </div>
-            <div className="meta-actions">
-              <a className="meta-primary" href="#consultation">Get a Free Campaign Discussion →</a>
-              <a className="meta-secondary" href="#portfolio">View Experience</a>
-            </div>
-            <div className="meta-trust"><span>Campaign strategy</span><span>Lead quality</span><span>Tracking & optimization</span></div>
-          </div>
-          <div className="meta-hero-visual">
-            <div className="meta-photo-bg"></div>
-            <img src="/images/lambodar-digital.png?v=20260821e" alt="Lambodar Patra, Meta Ads and performance marketing professional" />
-            <div className="meta-float meta-float-one"><small>FOCUS</small><strong>Better Leads</strong><span>Not vanity metrics</span></div>
-            <div className="meta-float meta-float-two"><small>APPROACH</small><strong>Test → Learn → Scale</strong></div>
-          </div>
-        </div>
-      </section>
+      <section className="growth-hero"><div className="growth-container growth-hero-grid"><div className="growth-hero-copy reveal"><p className="growth-eyebrow">READY TO SCALE YOUR BUSINESS?</p><h1>YOUR BUSINESS CAN <em>GROW FASTER.</em></h1><h2>Let’s build the strategy that gets you there.</h2><p>I help businesses generate more visibility, qualified leads and sales through performance marketing, branding, digital strategy and technology.</p><div className="growth-actions"><a className="growth-primary" href="#audit">GET FREE BUSINESS GROWTH AUDIT →</a><TrackedWhatsAppLink className="growth-secondary" placement="hero">WHATSAPP ME →</TrackedWhatsAppLink></div><div className="growth-trust-row"><span><b>8+</b> Years Experience</span><span>Multiple Industries</span><span>End-to-End Strategy</span><span>Direct Consultation</span></div></div><div className="growth-hero-media reveal"><div className="growth-gold-orb"/><img src="/images/growth/lambodar-social-proof.png" alt="Lambodar Patra with digital marketing channels" width="1536" height="1536" fetchPriority="high"/>{[["Meta Ads","c1"],["Google","c2"],["Website","c3"],["Branding","c4"],["Lead Generation","c5"]].map(([label,cl])=><span className={`growth-float ${cl}`} key={label}>{label}</span>)}</div></div></section>
 
-      <section className="meta-logo-strip"><div className="meta-container"><span>EXPERIENCE ACROSS</span><strong>Education</strong><strong>Hospitality</strong><strong>Real Estate</strong><strong>Service Businesses</strong><strong>Digital Platforms</strong></div></section>
+      <section className="growth-ecosystem growth-section"><div className="growth-container"><div className="growth-heading centered"><p className="growth-eyebrow">CONNECTED GROWTH</p><h2>ONE BUSINESS. <em>MULTIPLE GROWTH CHANNELS.</em></h2><p>Real growth happens when every channel supports the same customer journey.</p></div><div className="ecosystem-map"><svg className="ecosystem-lines" viewBox="0 0 1000 620" aria-hidden="true"><circle cx="500" cy="310" r="225"/><circle cx="500" cy="310" r="155"/><path d="M500 40V580M230 310H770M310 120L690 500M690 120L310 500"/></svg><div className="ecosystem-core"><img src="/images/growth/lambodar-growth.jpg" alt="Lambodar Patra business growth strategy" loading="lazy"/><strong>Your Business</strong><span>Growth System</span></div><div className="ecosystem-nodes">{channels.map(([name,copy],i)=><button type="button" className={`eco-node n${i+1}`} key={name}><b>{name}</b><small>{copy}</small></button>)}</div></div></div></section>
 
-      <section className="meta-section meta-problem">
-        <div className="meta-container meta-two-col">
-          <div><div className="meta-label">WHY CAMPAIGNS STRUGGLE</div><h2>Clicks are easy. A reliable lead system needs <em>more.</em></h2><p>Meta Ads works best when every stage supports the next—from the first scroll-stopping creative to the final sales follow-up.</p></div>
-          <div className="meta-problem-list">
-            <article><b>01</b><div><h3>Unclear offer</h3><p>The audience sees an ad, but not a strong reason to act now.</p></div></article>
-            <article><b>02</b><div><h3>Wrong campaign structure</h3><p>Budget gets divided without enough data for smart optimization.</p></div></article>
-            <article><b>03</b><div><h3>Weak lead qualification</h3><p>Cheap enquiries arrive, but few match the actual customer profile.</p></div></article>
-            <article><b>04</b><div><h3>Slow follow-up</h3><p>Good leads turn cold before the sales conversation starts.</p></div></article>
-          </div>
-        </div>
-      </section>
+      <section className="growth-section growth-dark"><div className="growth-container growth-split"><div className="reveal"><p className="growth-eyebrow gold">STRATEGY BEFORE SPEND</p><h2>MARKETING WITHOUT STRATEGY <em>IS JUST SPENDING MONEY.</em></h2><p>I first understand the business, customers, competitors and existing digital presence before recommending where to invest.</p><img className="strategy-photo" src="/images/growth/lambodar-office.png" alt="Lambodar Patra reviewing a business growth strategy" loading="lazy"/></div><div className="strategy-path">{["Business Problem","Digital Audit","Competitor Research","Growth Strategy","Marketing System","Lead Generation","Optimization","Scale"].map((item,i)=><div key={item}><span>{String(i+1).padStart(2,"0")}</span><strong>{item}</strong>{i<7&&<i>↓</i>}</div>)}</div></div></section>
 
-      <section className="meta-section meta-dark">
-        <div className="meta-container meta-results-grid">
-          <div><div className="meta-label gold">THE PERFORMANCE SYSTEM</div><h2>Decisions guided by data. Growth supported by execution.</h2><p>Campaign numbers are reviewed alongside lead quality and sales feedback, so optimization is connected to the business outcome.</p><ul><li>Audience and competitor research</li><li>Campaign and funnel planning</li><li>Creative direction and testing</li><li>Lead tracking and qualification</li><li>Weekly optimization and scale planning</li></ul></div>
-          <PerformanceVisual />
-        </div>
-      </section>
+      <section className="growth-section growth-soft"><div className="growth-container"><div className="growth-heading"><p className="growth-eyebrow">DOES THIS SOUND FAMILIAR?</p><h2>ARE YOU <em>FACING THIS?</em></h2></div><div className="problem-grid">{problems.map(([icon,title])=><article key={title}><span>{icon}</span><h3>{title}</h3></article>)}</div><div className="center-cta"><h3>If you said YES to even one of these, let’s talk.</h3><a className="growth-primary" href="#audit">ANALYSE MY BUSINESS →</a></div></div></section>
 
-      <section className="meta-section" id="portfolio">
-        <div className="meta-container">
-          <div className="meta-heading"><div><div className="meta-label">SELECTED EXPERIENCE</div><h2>Multi-industry campaign experience.</h2></div><p>Different sectors need different offers, audiences and conversion journeys. The strategy is built around the business—not copied from a template.</p></div>
-          <div className="meta-portfolio-grid">{portfolio.map((item, index) => <article key={item.sector} className={index === 1 ? "featured" : ""}><span>0{index + 1} / {item.sector}</span><h3>{item.names}</h3><p>{item.result}</p></article>)}</div>
-          <p className="meta-disclaimer">Portfolio names represent sectors and projects worked on. Campaign performance varies by offer, market, budget, creative and sales follow-up.</p>
-        </div>
-      </section>
+      <section className="growth-section"><div className="growth-container growth-split funnel-split"><div><p className="growth-eyebrow">BUSINESS GROWTH ENGINE</p><h2>VIEWS ARE NOT THE GOAL. <em>GROWTH IS.</em></h2><p>I don’t focus on just getting views or followers. I build a system designed to move potential customers from discovery to enquiry and ultimately towards becoming paying customers.</p><img className="funnel-photo" src="/images/growth/lambodar-strategist.png" alt="Lambodar Patra explaining a business growth funnel" loading="lazy"/></div><div className="growth-funnel">{["Attention","Traffic","Engagement","Leads","Follow-up","Conversion","Retention","Growth"].map((x,i)=><div style={{"--i":i} as React.CSSProperties} key={x}><span>{x}</span><i>●</i></div>)}</div></div></section>
 
-      <section className="meta-section meta-process-section">
-        <div className="meta-container"><div className="meta-heading"><div><div className="meta-label">HOW WE START</div><h2>A clear path from audit to scale.</h2></div></div><div className="meta-process"><article><b>1</b><h3>Understand</h3><p>Business, offer, audience, past campaigns and sales goal.</p></article><article><b>2</b><h3>Plan</h3><p>Funnel, creative angles, budget split and tracking setup.</p></article><article><b>3</b><h3>Launch</h3><p>Campaign activation with structured tests and lead flow.</p></article><article><b>4</b><h3>Optimize</h3><p>Improve using performance data and real lead feedback.</p></article></div></div>
-      </section>
+      <section className="growth-section growth-black" id="services"><div className="growth-container"><div className="growth-heading"><p className="growth-eyebrow gold">WHAT I CAN BUILD WITH YOU</p><h2>ONE STRATEGY. <em>SIX GROWTH CAPABILITIES.</em></h2></div><div className="services-ecosystem">{services.map(([no,title,copy])=><article key={title}><span>{no}</span><h3>{title}</h3><p>{copy}</p><i>↗</i></article>)}</div></div></section>
 
-      <section className="meta-section meta-consultation" id="consultation"><div className="meta-container meta-form-layout"><div className="meta-form-copy"><div className="meta-label gold">READY TO IMPROVE YOUR CAMPAIGNS?</div><h2>Let’s find the next growth opportunity.</h2><p>Whether you are launching your first campaign or fixing an existing one, start with a focused discussion about your offer, audience and target.</p><div className="meta-contact-card"><img src="/images/lambodar-pointing-hd.png?v=20260821e" alt="Lambodar Patra" /><div><strong>Lambodar Patra</strong><span>Digital Growth & Performance Marketing Partner</span><a href="tel:+918128729003">+91 81287 29003</a></div></div></div><MetaLeadForm /></div></section>
+      <section className="growth-section growth-before-after"><div className="growth-container"><div className="growth-heading centered"><p className="growth-eyebrow">TRANSFORMATION</p><h2>FROM RANDOM MARKETING <em>TO A REAL GROWTH SYSTEM.</em></h2></div><div className="ba-grid"><div className="before"><span>BEFORE</span>{["Random Posting","Low Visibility","Poor Website","No Funnel","Wasted Ad Spend","Few Enquiries","No Follow-Up System"].map(x=><p key={x}>× {x}</p>)}</div><div className="ba-arrow">→</div><div className="after"><span>AFTER</span>{["Clear Strategy","Professional Brand","Strong Digital Presence","Optimized Ads","Lead Generation","Sales Funnel","Measurable Growth System"].map(x=><p key={x}>✓ {x}</p>)}</div></div></div></section>
 
-      <section className="meta-section meta-faq"><div className="meta-container"><div className="meta-heading"><div><div className="meta-label">COMMON QUESTIONS</div><h2>Before we work together.</h2></div></div><div className="meta-faq-list">{faq.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+      <section className="industry-band"><div className="industry-track">{[...industries,...industries].map((x,i)=><span key={`${x}-${i}`}>{x}<b>✦</b></span>)}</div></section>
 
-      <footer className="meta-footer"><div className="meta-container"><img src="/images/mydigitalskills-logo-v3.jpg?v=20260821e" alt="MyDigitalSkills" /><p>Meta Ads · Performance Marketing · Lead Generation</p><div><a href="mailto:connect@mydigitalskills.in">connect@mydigitalskills.in</a><a href="https://www.instagram.com/mydigitalskills.in/" target="_blank" rel="noreferrer">Instagram</a></div><small>© {new Date().getFullYear()} MyDigitalSkills · Noida, India</small></div></footer>
-      <a className="meta-mobile-sticky" href="https://wa.me/918128729003?text=Hi%20Lambodar%2C%20I%20need%20help%20with%20Meta%20Ads." target="_blank" rel="noreferrer">Discuss Meta Ads on WhatsApp →</a>
+      <section className="growth-section growth-soft"><div className="growth-container growth-split"><div className="journey-photo"><img src="/images/growth/lambodar-hospitality.jpg" alt="Lambodar Patra professional experience" loading="lazy"/><span>8+ YEARS<br/>STRATEGY TO EXECUTION</span></div><div><p className="growth-eyebrow">EXPERIENCE JOURNEY</p><h2>BUILDING TOWARDS <em>COMPLETE BUSINESS GROWTH.</em></h2><div className="journey-timeline">{journey.map((x,i)=><div key={x}><span>{String(i+1).padStart(2,"0")}</span><strong>{x}</strong></div>)}</div></div></div></section>
+
+      <section className="growth-section" id="work"><div className="growth-container"><div className="growth-heading"><p className="growth-eyebrow">REAL EXPERIENCE</p><h2>DON’T JUST TAKE MY WORD FOR IT. <em>SEE THE WORK.</em></h2><p>Project names and responsibilities are shown without fabricated results or borrowed analytics.</p></div><div className="portfolio-grid">{portfolio.map(([sector,names,work],i)=><article key={sector}><span>{sector}</span><h3>{names}</h3><p>{work}</p><details><summary>View case-study approach →</summary><div><b>The Challenge</b><p>Understand the business context and current digital gap.</p><b>Strategy & Delivery</b><p>Build the right channel mix, offer communication and enquiry journey.</p><b>Outcome</b><p>Verified results can be added only when approved campaign data is available.</p></div></details>{i===1&&<img src="/images/growth/lambodar-social-story.png" alt="Social media marketing creative by Lambodar Patra" loading="lazy"/>}</article>)}</div></div></section>
+
+      <section className="growth-section audit-section" id="audit"><div className="growth-container audit-grid"><div className="audit-copy"><p className="growth-eyebrow gold">FREE BUSINESS GROWTH AUDIT</p><h2>NOT SURE WHAT’S STOPPING <em>YOUR BUSINESS FROM GROWING?</em></h2><h3>Let me analyse it.</h3><div className="audit-checks">{["Online Presence Review","Social Media Review","Google Visibility Check","Website Review","Competitor Observation","Lead Generation Opportunities","Growth Recommendations"].map(x=><span key={x}>✓ {x}</span>)}</div><img src="/images/growth/lambodar-channel-growth.png" alt="Lambodar Patra with digital growth channels" loading="lazy"/></div><GrowthAuditForm/></div></section>
+
+      <section className="growth-section next-section"><div className="growth-container"><div className="growth-heading centered"><p className="growth-eyebrow">WHAT HAPPENS NEXT?</p><h2>A SIMPLE START. <em>CLEAR DIRECTION.</em></h2></div><div className="next-steps">{[["01","You Submit Your Business"],["02","I Review Your Digital Presence"],["03","We Have a 15-Minute Discussion"],["04","You Receive Your Growth Direction"]].map(([no,text],i)=><article key={no}><span>{no}</span><strong>{text}</strong>{i<3&&<i>→</i>}</article>)}</div></div></section>
+
+      <section className="growth-section growth-about"><div className="growth-container growth-split"><div className="about-image"><img src="/images/growth/lambodar-about.jpg" alt="Lambodar Patra, Business Growth and Digital Marketing Strategist" loading="lazy"/><span>I DON’T JUST MARKET BUSINESSES.<br/><b>I HELP THEM GROW.</b></span></div><div><p className="growth-eyebrow">ABOUT LAMBODAR</p><h2>HI, I’M <em>LAMBODAR PATRA.</em></h2><h3>Business Growth & Digital Marketing Strategist</h3><p>For 8+ years, I’ve worked across digital marketing, social media, branding, performance marketing, lead generation and business-growth strategy.</p><div className="approach-line">Understand → Identify → Strategize → Execute → Measure → Improve → Scale</div><p>Every business is different. That’s why I don’t believe in selling the same marketing package to everyone.</p><TrackedWhatsAppLink className="growth-primary" placement="about">LET’S DISCUSS YOUR BUSINESS →</TrackedWhatsAppLink></div></div></section>
+
+      <section className="growth-section growth-dark"><div className="growth-container growth-split"><div><p className="growth-eyebrow gold">PERSONAL APPROACH</p><h2>A STRATEGY BUILT AROUND <em>YOUR REAL BUSINESS.</em></h2><div className="personal-path">{["Your Business","Your Customer","Your Competition","Your Current Marketing","The Opportunity","Custom Growth Strategy"].map((x,i)=><div key={x}><span>{i+1}</span><strong>{x}</strong></div>)}</div></div><img className="personal-photo" src="/images/growth/lambodar-fullbody.png" alt="Lambodar Patra personal business strategy consultation" loading="lazy"/></div></section>
+
+      <section className="trust-strip"><div className="growth-container">{["8+ Years Experience","Strategy-First Approach","Direct Consultation","Multi-Industry Experience","End-to-End Digital Support","Long-Term Growth Focus"].map(x=><span key={x}>✓ {x}</span>)}</div></section>
+
+      <section className="growth-section growth-faq"><div className="growth-container"><div className="growth-heading centered"><p className="growth-eyebrow">QUESTIONS, ANSWERED</p><h2>BEFORE WE <em>GET STARTED.</em></h2></div><div className="growth-faq-list">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
+
+      <section className="final-cta"><div className="growth-container final-grid"><div><p className="growth-eyebrow gold">YOUR NEXT GROWTH MOVE</p><h2>YOU’VE BUILT THE BUSINESS. <em>NOW LET’S GROW IT.</em></h2><p>Your next customer could already be searching for a business like yours. Let’s make sure they find you.</p><div className="growth-actions"><a className="growth-primary" href="#audit">GET MY FREE BUSINESS GROWTH AUDIT</a><TrackedWhatsAppLink className="growth-secondary dark-button" placement="final_cta">TALK TO LAMBODAR ON WHATSAPP</TrackedWhatsAppLink></div><small>Free Initial Consultation · Direct Discussion · No Obligation</small></div><img src="/images/growth/lambodar-social-proof.png" alt="Talk to Lambodar Patra about business growth" loading="lazy"/></div></section>
+
+      <footer className="growth-footer"><img src="/images/mydigitalskills-logo-v3.jpg?v=growth2026" alt="MyDigitalSkills"/><p>Business Growth · Digital Strategy · Performance Marketing · Technology</p><div><a href="mailto:connect@mydigitalskills.in">connect@mydigitalskills.in</a><a href="tel:+918128729003">+91 81287 29003</a></div><small>© {new Date().getFullYear()} MyDigitalSkills · Lambodar Patra · Noida, India</small></footer>
+      <div className="mobile-conversion-bar"><TrackedWhatsAppLink placement="mobile_bar">WhatsApp</TrackedWhatsAppLink><a href="#audit">Free Audit</a></div>
     </main>
   );
 }
