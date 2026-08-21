@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Scale with Meta Ads — Lambodar Patra",
     description: "7+ years of Meta Ads and performance marketing experience across education, hospitality, real estate and service businesses.",
-    images: [{ url: "/images/lambodar-digital.png", width: 1024, height: 1024 }],
+    images: [{ url: "/images/lambodar-digital.png?v=20260821e", width: 1024, height: 1024 }],
   },
 };
 
@@ -42,7 +42,7 @@ export default function MetaAdsLandingPage() {
     <main className="meta-lp">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <header className="meta-nav">
-        <a href="#top" aria-label="MyDigitalSkills home"><img src="/images/mydigitalskills-logo-v3.jpg" alt="MyDigitalSkills" /></a>
+        <a href="#top" aria-label="MyDigitalSkills home"><img src="/images/mydigitalskills-logo-v3.jpg?v=20260821e" alt="MyDigitalSkills" /></a>
         <a className="meta-nav-cta" href="https://wa.me/918128729003?text=Hi%20Lambodar%2C%20I%20need%20help%20with%20Meta%20Ads." target="_blank" rel="noreferrer">WhatsApp: +91 81287 29003</a>
       </header>
 
@@ -65,7 +65,7 @@ export default function MetaAdsLandingPage() {
           </div>
           <div className="meta-hero-visual">
             <div className="meta-photo-bg"></div>
-            <img src="/images/lambodar-digital.png" alt="Lambodar Patra, Meta Ads and performance marketing professional" />
+            <img src="/images/lambodar-digital.png?v=20260821e" alt="Lambodar Patra, Meta Ads and performance marketing professional" />
             <div className="meta-float meta-float-one"><small>FOCUS</small><strong>Better Leads</strong><span>Not vanity metrics</span></div>
             <div className="meta-float meta-float-two"><small>APPROACH</small><strong>Test → Learn → Scale</strong></div>
           </div>
@@ -105,11 +105,11 @@ export default function MetaAdsLandingPage() {
         <div className="meta-container"><div className="meta-heading"><div><div className="meta-label">HOW WE START</div><h2>A clear path from audit to scale.</h2></div></div><div className="meta-process"><article><b>1</b><h3>Understand</h3><p>Business, offer, audience, past campaigns and sales goal.</p></article><article><b>2</b><h3>Plan</h3><p>Funnel, creative angles, budget split and tracking setup.</p></article><article><b>3</b><h3>Launch</h3><p>Campaign activation with structured tests and lead flow.</p></article><article><b>4</b><h3>Optimize</h3><p>Improve using performance data and real lead feedback.</p></article></div></div>
       </section>
 
-      <section className="meta-section meta-consultation" id="consultation"><div className="meta-container meta-form-layout"><div className="meta-form-copy"><div className="meta-label gold">READY TO IMPROVE YOUR CAMPAIGNS?</div><h2>Let’s find the next growth opportunity.</h2><p>Whether you are launching your first campaign or fixing an existing one, start with a focused discussion about your offer, audience and target.</p><div className="meta-contact-card"><img src="/images/lambodar-pointing-hd.png?v=20260821b" alt="Lambodar Patra" /><div><strong>Lambodar Patra</strong><span>Digital Growth & Performance Marketing Partner</span><a href="tel:+918128729003">+91 81287 29003</a></div></div></div><MetaLeadForm /></div></section>
+      <section className="meta-section meta-consultation" id="consultation"><div className="meta-container meta-form-layout"><div className="meta-form-copy"><div className="meta-label gold">READY TO IMPROVE YOUR CAMPAIGNS?</div><h2>Let’s find the next growth opportunity.</h2><p>Whether you are launching your first campaign or fixing an existing one, start with a focused discussion about your offer, audience and target.</p><div className="meta-contact-card"><img src="/images/lambodar-pointing-hd.png?v=20260821e" alt="Lambodar Patra" /><div><strong>Lambodar Patra</strong><span>Digital Growth & Performance Marketing Partner</span><a href="tel:+918128729003">+91 81287 29003</a></div></div></div><MetaLeadForm /></div></section>
 
       <section className="meta-section meta-faq"><div className="meta-container"><div className="meta-heading"><div><div className="meta-label">COMMON QUESTIONS</div><h2>Before we work together.</h2></div></div><div className="meta-faq-list">{faq.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
 
-      <footer className="meta-footer"><div className="meta-container"><img src="/images/mydigitalskills-logo-v3.jpg" alt="MyDigitalSkills" /><p>Meta Ads · Performance Marketing · Lead Generation</p><div><a href="mailto:connect@mydigitalskills.in">connect@mydigitalskills.in</a><a href="https://www.instagram.com/mydigitalskills.in/" target="_blank" rel="noreferrer">Instagram</a></div><small>© {new Date().getFullYear()} MyDigitalSkills · Noida, India</small></div></footer>
+      <footer className="meta-footer"><div className="meta-container"><img src="/images/mydigitalskills-logo-v3.jpg?v=20260821e" alt="MyDigitalSkills" /><p>Meta Ads · Performance Marketing · Lead Generation</p><div><a href="mailto:connect@mydigitalskills.in">connect@mydigitalskills.in</a><a href="https://www.instagram.com/mydigitalskills.in/" target="_blank" rel="noreferrer">Instagram</a></div><small>© {new Date().getFullYear()} MyDigitalSkills · Noida, India</small></div></footer>
       <a className="meta-mobile-sticky" href="https://wa.me/918128729003?text=Hi%20Lambodar%2C%20I%20need%20help%20with%20Meta%20Ads." target="_blank" rel="noreferrer">Discuss Meta Ads on WhatsApp →</a>
     </main>
   );
