@@ -42,7 +42,7 @@ export default function MetaAdsLandingPage() {
     <main className="meta-lp">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <header className="meta-nav">
-        <a href="#top" aria-label="MyDigitalSkills home"><img src="/images/mydigitalskills-logo.png" alt="MyDigitalSkills" /></a>
+        <a href="#top" aria-label="MyDigitalSkills home"><img src="/images/mydigitalskills-logo.png?v=20260821" alt="MyDigitalSkills" /></a>
         <a className="meta-nav-cta" href="https://wa.me/918128729003?text=Hi%20Lambodar%2C%20I%20need%20help%20with%20Meta%20Ads." target="_blank" rel="noreferrer">WhatsApp: +91 81287 29003</a>
       </header>
 
@@ -109,7 +109,7 @@ export default function MetaAdsLandingPage() {
 
       <section className="meta-section meta-faq"><div className="meta-container"><div className="meta-heading"><div><div className="meta-label">COMMON QUESTIONS</div><h2>Before we work together.</h2></div></div><div className="meta-faq-list">{faq.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
 
-      <footer className="meta-footer"><div className="meta-container"><img src="/images/mydigitalskills-logo.png" alt="MyDigitalSkills" /><p>Meta Ads · Performance Marketing · Lead Generation</p><div><a href="mailto:connect@mydigitalskills.in">connect@mydigitalskills.in</a><a href="https://www.instagram.com/mydigitalskills.in/" target="_blank" rel="noreferrer">Instagram</a></div><small>© {new Date().getFullYear()} MyDigitalSkills · Noida, India</small></div></footer>
+      <footer className="meta-footer"><div className="meta-container"><img src="/images/mydigitalskills-logo.png?v=20260821" alt="MyDigitalSkills" /><p>Meta Ads · Performance Marketing · Lead Generation</p><div><a href="mailto:connect@mydigitalskills.in">connect@mydigitalskills.in</a><a href="https://www.instagram.com/mydigitalskills.in/" target="_blank" rel="noreferrer">Instagram</a></div><small>© {new Date().getFullYear()} MyDigitalSkills · Noida, India</small></div></footer>
       <a className="meta-mobile-sticky" href="https://wa.me/918128729003?text=Hi%20Lambodar%2C%20I%20need%20help%20with%20Meta%20Ads." target="_blank" rel="noreferrer">Discuss Meta Ads on WhatsApp →</a>
     </main>
   );
