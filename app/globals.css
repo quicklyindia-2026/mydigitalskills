@@ -525,3 +525,23 @@ h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
 .brand img,.footer-brand img,.meta-nav img,.meta-footer img{object-fit:contain;object-position:center}
 .about-photo-clean img,.about-photo-tall img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center bottom!important}
 @media(max-width:680px){.about-photo-clean img,.about-photo-tall img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center bottom!important}}
+
+
+/* Cross-device raster stability: render brand/founder assets as static backgrounds */
+.header{background:#fffdf8!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.brand{display:block!important;flex:0 0 222px!important;width:222px!important;height:66px!important;background:#fffdf8 url("/images/mydigitalskills-logo-v3.jpg?stable=4") center/contain no-repeat!important}
+.brand img{display:none!important}
+.footer-brand:before{content:"";display:block;width:270px;height:92px;margin:0 0 14px;background:#fffdf8 url("/images/mydigitalskills-logo-v3.jpg?stable=4") center/contain no-repeat;border-radius:16px;box-shadow:0 16px 38px #0005}
+.footer-brand img{display:none!important}
+.meta-nav>a[aria-label="MyDigitalSkills home"]{display:block;width:210px;height:58px;background:#fff url("/images/mydigitalskills-logo-v3.jpg?stable=4") center/contain no-repeat}
+.meta-nav>a[aria-label="MyDigitalSkills home"] img{display:none!important}
+.meta-footer .meta-container:before{content:"";display:block;width:230px;height:70px;margin:0 auto 14px;background:#fff url("/images/mydigitalskills-logo-v3.jpg?stable=4") center/contain no-repeat;border-radius:12px}
+.meta-footer img{display:none!important}
+.about-photo-clean,.about-photo-tall{background-color:#ffd761!important;background-image:url("/images/lambodar-profile.jpg?stable=4"),linear-gradient(145deg,#f4ead4,#ffd761 50%,#e11a24)!important;background-repeat:no-repeat,no-repeat!important;background-position:center bottom,center!important;background-size:contain,cover!important}
+.about-photo-clean img,.about-photo-tall img{display:none!important;animation:none!important;transform:none!important;filter:none!important}
+.about-photo-clean:before{animation:none!important}
+@media(max-width:680px){
+ .brand{flex-basis:220px!important;width:220px!important;height:64px!important}
+ .footer-brand:before{width:240px;height:82px;margin-inline:auto}
+ .about-photo-clean,.about-photo-tall{background-size:contain,cover!important;background-position:center bottom,center!important}
+}
