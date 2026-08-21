@@ -23,7 +23,7 @@ export function Header() {
       <header className="header">
         <nav className="container nav" aria-label="Main navigation">
           <Link className="brand" href="/" aria-label="MyDigitalSkills home">
-            <img src="/images/mydigitalskills-logo.png" alt="MyDigitalSkills - Grow Your Business with us" />
+            <img src="/images/mydigitalskills-logo.png?v=20260821" alt="MyDigitalSkills - Grow Your Business with us" />
           </Link>
           <div className="nav-links">
             {navItems.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
@@ -47,7 +47,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src="/images/mydigitalskills-logo.png" alt="MyDigitalSkills" />
+          <img src="/images/mydigitalskills-logo.png?v=20260821" alt="MyDigitalSkills" />
           <p>Digital growth, performance marketing, websites and business solutions led by Lambodar Patra.</p>
         </div>
         <div>
