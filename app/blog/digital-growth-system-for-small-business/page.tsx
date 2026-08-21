@@ -105,7 +105,7 @@ export default function DigitalGrowthBlog() {
         <h2>Frequently asked questions</h2>
         <div className="faq-list">{faqs.map(([q,a]) => <details className="faq-item" key={q}><summary>{q}</summary><p>{a}</p></details>)}</div>
 
-        <div className="author-box"><img src="/images/lambodar-clean-new.png?v=20260821b" alt="Lambodar Patra" /><div><h3>About Lambodar Patra</h3><p>Digital marketing, Meta Ads and business growth professional with 7+ years of experience across education, hospitality, real estate, construction, service businesses and digital platforms.</p></div></div>
+        <div className="author-box"><img src="/images/lambodar-founder-v3.png" alt="Lambodar Patra" /><div><h3>About Lambodar Patra</h3><p>Digital marketing, Meta Ads and business growth professional with 7+ years of experience across education, hospitality, real estate, construction, service businesses and digital platforms.</p></div></div>
         <div className="cta-band" style={{ marginTop: 35 }}><p className="eyebrow">Apply this to your business</p><h2>Need a connected digital growth plan?</h2><p>Start with a free website and growth consultation.</p><div className="hero-actions"><Link className="button button-gold" href="/contact">Book Free Consultation →</Link><Link className="button button-light" href="/blog">Read More Articles</Link></div></div>
       </div>
     </article>

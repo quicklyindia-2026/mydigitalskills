@@ -67,7 +67,7 @@ export default function Home() {
 
         <section className="section section-soft">
           <div className="container about-grid">
-            <div className="about-photo-clean"><img src="/images/lambodar-clean-new.png?v=20260821b" alt="Lambodar Patra"/><div className="about-photo-accent">Strategy → Execution → Growth</div></div>
+            <div className="about-photo-clean"><img src="/images/lambodar-founder-v3.png" alt="Lambodar Patra"/><div className="about-photo-accent">Strategy → Execution → Growth</div></div>
             <div className="about-copy">
               <p className="eyebrow">About the founder</p>
               <h2>Marketing thinking with a <span className="red-text">business mindset.</span></h2>

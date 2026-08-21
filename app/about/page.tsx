@@ -9,7 +9,7 @@ export default function AboutPage() {
     <SiteShell><main>
       <section className="page-hero visual-page-hero"><div className="container page-hero-split"><div><p className="eyebrow">About Lambodar Patra</p><h1>A digital marketer who thinks like a <span>growth partner.</span></h1><p>From campaign strategy to websites and business systems, my work connects marketing execution with the real commercial goal behind it.</p></div><PagePortrait pose="pointing"/></div></section>
       <section className="section"><div className="container about-grid">
-        <div className="about-photo-clean about-photo-tall"><img src="/images/lambodar-clean-new.png?v=20260821b" alt="Lambodar Patra, founder of MyDigitalSkills"/><div className="about-photo-accent">Digital Growth Partner</div></div>
+        <div className="about-photo-clean about-photo-tall"><img src="/images/lambodar-founder-v3.png" alt="Lambodar Patra, founder of MyDigitalSkills"/><div className="about-photo-accent">Digital Growth Partner</div></div>
         <div className="about-copy">
           <p className="eyebrow">My journey</p><h2>7+ years of learning, building and <span className="red-text">growing brands.</span></h2>
           <p className="lead">I have worked across franchise expansion, performance marketing, education, hospitality, F&B, real estate, construction chemicals, service businesses and digital platforms. That range helps me understand both the marketing problem and the operational reality behind it.</p>
