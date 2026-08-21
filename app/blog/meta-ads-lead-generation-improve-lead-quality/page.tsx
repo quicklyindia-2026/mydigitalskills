@@ -90,7 +90,7 @@ export default function MetaLeadQualityBlog() {
 
       <h2>Frequently asked questions</h2>
       <div className="faq-list">{faqs.map(([q,a]) => <details className="faq-item" key={q}><summary>{q}</summary><p>{a}</p></details>)}</div>
-      <div className="author-box"><img src="/images/lambodar-clean-new.png" alt="Lambodar Patra" /><div><h3>About Lambodar Patra</h3><p>Meta Ads and digital growth professional with 7+ years of experience managing lead generation and business marketing across multiple industries.</p></div></div>
+      <div className="author-box"><img src="/images/lambodar-clean-new.png?v=20260821b" alt="Lambodar Patra" /><div><h3>About Lambodar Patra</h3><p>Meta Ads and digital growth professional with 7+ years of experience managing lead generation and business marketing across multiple industries.</p></div></div>
       <div className="cta-band" style={{ marginTop: 35 }}><p className="eyebrow">Improve your lead system</p><h2>Need help with Meta Ads and lead quality?</h2><p>Start with a free initial consultation and campaign review.</p><div className="hero-actions"><a className="button button-gold" href="/contact">Book Free Consultation →</a><a className="button button-light" href="/services">View Services</a></div></div>
     </div>
   </article></main></SiteShell>;
