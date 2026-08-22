@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.mydigitalskills.in";
   const updated = new Date("2026-08-22");
   const pages = [
-    "", "/about", "/services", "/portfolio", "/portfolio/quickly-india",
+    "", "/about", "/services", "/portfolio", "/portfolio/quickly-india", "/quicklymedia",
     "/courses", "/blog", "/blog/digital-growth-system-for-small-business",
     "/blog/meta-ads-lead-generation-improve-lead-quality", "/contact",
   ];
