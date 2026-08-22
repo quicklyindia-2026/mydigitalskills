@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GrowthAuditForm, LandingTracker, TrackedWhatsAppLink } from "@/components/GrowthAuditForm";
+import { GrowthAuditForm, LandingTracker, ProblemSelector, TrackedWhatsAppLink } from "@/components/GrowthAuditForm";
 
 export const metadata: Metadata = {
   title: "Lambodar Patra | Business Growth & Digital Marketing Strategist",
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 const channels = [
   ["Meta Ads", "Performance campaigns for qualified enquiries."], ["Instagram", "Content and discovery that builds brand recall."], ["Facebook", "Local reach, retargeting and lead generation."], ["Google", "Capture customers with active intent."], ["YouTube", "Education and video-led trust building."], ["Website", "Convert attention into enquiry and action."], ["SEO", "Build discoverability that compounds over time."], ["Google Business", "Improve local visibility, calls and direction actions."], ["WhatsApp", "Move enquiries into direct conversations."], ["Swiggy", "Improve restaurant discovery and order visibility."], ["Zomato", "Strengthen hospitality offers and local demand."], ["Lead Generation", "Create structured enquiry journeys."], ["Branding", "Build a memorable and credible market position."], ["Automation", "Improve follow-up, tracking and response speed."],
 ];
-const problems = [["↘", "Low Sales?"], ["◎", "Not Getting Leads?"], ["₹", "Running Ads But No Results?"], ["G", "Poor Google Visibility?"], ["#", "Social Media Not Growing?"], ["↗", "Website Not Converting?"], ["?", "No Clear Marketing Strategy?"], ["⚡", "Competitors Growing Faster?"]];
 const services = [
   ["01", "Performance Marketing", "Meta Ads · Facebook Ads · Instagram Ads · Lead Generation · Retargeting · Campaign Optimization"],
   ["02", "Social Media & Branding", "Social Media Strategy · Content Strategy · Creative Design · Reels · Brand Positioning · Campaign Planning"],
@@ -52,7 +51,7 @@ export default function BusinessGrowthLandingPage() {
 
       <section className="growth-section growth-dark"><div className="growth-container growth-split"><div className="reveal"><p className="growth-eyebrow gold">STRATEGY BEFORE SPEND</p><h2>MARKETING WITHOUT STRATEGY <em>IS JUST SPENDING MONEY.</em></h2><p>I first understand the business, customers, competitors and existing digital presence before recommending where to invest.</p><img className="strategy-photo" src="/images/growth/lambodar-office.png" alt="Lambodar Patra reviewing a business growth strategy" loading="lazy"/></div><div className="strategy-path">{["Business Problem","Digital Audit","Competitor Research","Growth Strategy","Marketing System","Lead Generation","Optimization","Scale"].map((item,i)=><div key={item}><span>{String(i+1).padStart(2,"0")}</span><strong>{item}</strong>{i<7&&<i>↓</i>}</div>)}</div></div></section>
 
-      <section className="growth-section growth-soft"><div className="growth-container"><div className="growth-heading"><p className="growth-eyebrow">DOES THIS SOUND FAMILIAR?</p><h2>ARE YOU <em>FACING THIS?</em></h2></div><div className="problem-grid">{problems.map(([icon,title])=><article key={title}><span>{icon}</span><h3>{title}</h3></article>)}</div><div className="center-cta"><h3>If you said YES to even one of these, let’s talk.</h3><a className="growth-primary" href="#audit">ANALYSE MY BUSINESS →</a></div></div></section>
+      <section className="growth-section growth-soft problem-section"><div className="growth-container"><div className="growth-heading"><p className="growth-eyebrow">DOES THIS SOUND FAMILIAR?</p><h2>ARE YOU <em>FACING THIS?</em></h2><p>Identify the growth problems affecting your business right now.</p></div><ProblemSelector /></div></section>
 
       <section className="growth-section"><div className="growth-container growth-split funnel-split"><div><p className="growth-eyebrow">BUSINESS GROWTH ENGINE</p><h2>VIEWS ARE NOT THE GOAL. <em>GROWTH IS.</em></h2><p>I don’t focus on just getting views or followers. I build a system designed to move potential customers from discovery to enquiry and ultimately towards becoming paying customers.</p><img className="funnel-photo" src="/images/growth/lambodar-strategist.png" alt="Lambodar Patra explaining a business growth funnel" loading="lazy"/></div><div className="growth-funnel">{["Attention","Traffic","Engagement","Leads","Follow-up","Conversion","Retention","Growth"].map((x,i)=><div style={{"--i":i} as React.CSSProperties} key={x}><span>{x}</span><i>●</i></div>)}</div></div></section>
 

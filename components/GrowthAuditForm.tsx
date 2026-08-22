@@ -27,7 +27,7 @@ export function LandingTracker() {
     if (!root) return;
 
     const targets = root.querySelectorAll<HTMLElement>(
-      ".growth-section, .final-cta, .growth-heading, .growth-section h2, .growth-section h3, .growth-section img, .problem-grid article, .services-ecosystem article, .portfolio-grid article, .journey-timeline div, .strategy-path > div, .next-steps article, .audit-checks span, .growth-faq-list details"
+      ".growth-section, .final-cta, .growth-heading, .growth-section h2, .growth-section h3, .growth-section img, .problem-option, .services-ecosystem article, .portfolio-grid article, .journey-timeline div, .strategy-path > div, .next-steps article, .audit-checks span, .growth-faq-list details"
     );
     targets.forEach((target, index) => {
       target.classList.add("motion-ready");
@@ -63,6 +63,36 @@ export function LandingTracker() {
     };
   }, []);
   return <div className="growth-scroll-progress" aria-hidden="true" />;
+}
+
+const businessProblems = [
+  ["↘", "Low Sales"], ["◎", "Not Getting Leads"], ["₹", "Ads, No Results"], ["G", "Poor Google Visibility"],
+  ["#", "Social Media Not Growing"], ["↗", "Website Not Converting"], ["?", "No Clear Strategy"], ["⚡", "Competitors Growing Faster"],
+] as const;
+
+export function ProblemSelector() {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  function toggle(problem: string) {
+    setSelected((current) => {
+      const active = current.includes(problem);
+      track("Problem_Select", { problem, action: active ? "removed" : "selected" });
+      return active ? current.filter((item) => item !== problem) : [...current, problem];
+    });
+  }
+
+  return (
+    <div className="problem-selector">
+      <div className="problem-question"><span>?</span><div><b>Select what sounds familiar</b><small>Tap one or more business challenges</small></div></div>
+      <div className="problem-grid" role="group" aria-label="Select your current business challenges">
+        {businessProblems.map(([icon, title]) => {
+          const active = selected.includes(title);
+          return <button type="button" className="problem-option" aria-pressed={active} onClick={() => toggle(title)} key={title}><span className="problem-icon">{icon}</span><strong>{title}</strong><i>{active ? "✓" : "+"}</i></button>;
+        })}
+      </div>
+      <div className="problem-selection-summary"><div><strong>{selected.length ? `${selected.length} challenge${selected.length > 1 ? "s" : ""} selected` : "Facing any of these?"}</strong><span>{selected.length ? "Let’s identify the right next move." : "Choose the problems affecting your growth."}</span></div><a className="growth-primary" href="#audit">ANALYSE MY BUSINESS →</a></div>
+    </div>
+  );
 }
 
 export function GrowthAuditForm() {
