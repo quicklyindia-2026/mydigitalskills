@@ -27,7 +27,7 @@ export function LandingTracker() {
     if (!root) return;
 
     const targets = root.querySelectorAll<HTMLElement>(
-      ".growth-heading, .growth-section h2, .growth-section h3, .growth-section img, .problem-grid article, .services-ecosystem article, .portfolio-grid article, .journey-timeline div, .strategy-path > div, .next-steps article, .audit-checks span, .growth-faq-list details"
+      ".growth-section, .final-cta, .growth-heading, .growth-section h2, .growth-section h3, .growth-section img, .problem-grid article, .services-ecosystem article, .portfolio-grid article, .journey-timeline div, .strategy-path > div, .next-steps article, .audit-checks span, .growth-faq-list details"
     );
     targets.forEach((target, index) => {
       target.classList.add("motion-ready");
