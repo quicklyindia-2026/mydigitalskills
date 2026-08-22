@@ -3,6 +3,7 @@ import { SiteShell } from "@/components/SiteChrome";
 import { desc, eq } from "drizzle-orm";
 import { getDb } from "@/db";
 import { blogPosts } from "@/db/schema";
+import { featuredBlogPosts } from "@/lib/featured-blog-posts";
 
 export const metadata: Metadata = {
   title: "Digital Marketing & Business Growth Blog",
@@ -42,7 +43,8 @@ export const dynamic="force-dynamic";
 export default async function BlogPage() {
   let managed:typeof blogPosts.$inferSelect[]=[];try{managed=await getDb().select().from(blogPosts).where(eq(blogPosts.status,"published")).orderBy(desc(blogPosts.createdAt))}catch{}
   const managedPosts=managed.map(post=>({href:`/blog/${post.slug}`,image:post.coverImage||"/images/blog-digital-growth-system.webp",alt:post.title,category:post.category,date:new Date(post.createdAt).toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}),read:`${Math.max(3,Math.ceil(post.content.split(/\s+/).length/180))} min read`,title:post.title,description:post.excerpt}));
-  const displayPosts=[...managedPosts,...posts];
+  const featuredPosts=featuredBlogPosts.map(post=>({href:`/blog/${post.slug}`,image:post.image,alt:post.alt,category:post.category,date:post.date,read:post.read,title:post.title,description:post.excerpt}));
+  const displayPosts=[...managedPosts,...featuredPosts,...posts];
   return (
     <SiteShell>
       <main>

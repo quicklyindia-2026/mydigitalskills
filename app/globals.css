@@ -610,3 +610,7 @@ h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
 @keyframes gDesktopBlob{0%,100%{transform:translateX(-50%) scale(1);border-radius:44% 56% 48% 52%}50%{transform:translateX(-50%) scale(1.025);border-radius:56% 44% 57% 43%}}
 @keyframes gDesktopPhotoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(prefers-reduced-motion:reduce){.growth-gold-orb,.growth-hero-media>img{animation:none!important}}
+
+/* SEO blog author and article refinements */
+.blog-author-note{display:flex;align-items:center;gap:13px;margin-top:24px}.blog-author-note img{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;object-fit:cover;object-position:top}.blog-author-note strong,.blog-author-note small{display:block}.blog-author-note strong{font-size:14px}.blog-author-note small{margin-top:4px;color:var(--muted);font-size:11px}.article-content section{scroll-margin-top:100px}.article-faq{margin-top:55px}.article-faq h2{margin-top:0}.article-image img{height:100%;object-position:center 24%}.blog-card-image img{object-position:center 24%}
+@media(max-width:680px){.blog-author-note{align-items:flex-start}.blog-author-note img{width:46px;height:46px}.blog-author-note small{line-height:1.5}.article-image{border-radius:20px}.article-image img{aspect-ratio:4/3}.blog-card-image{aspect-ratio:4/3}.blog-card-body{padding:22px}.blog-card h2{font-size:24px}}
