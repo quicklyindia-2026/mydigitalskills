@@ -22,8 +22,47 @@ export function TrackedWhatsAppLink({ className = "", children, placement }: { c
 export function LandingTracker() {
   useEffect(() => {
     track("ViewContent", { page: "business_growth_audit" });
+
+    const root = document.querySelector<HTMLElement>(".growth-lp");
+    if (!root) return;
+
+    const targets = root.querySelectorAll<HTMLElement>(
+      ".growth-heading, .growth-section h2, .growth-section h3, .growth-section img, .problem-grid article, .services-ecosystem article, .portfolio-grid article, .journey-timeline div, .strategy-path > div, .next-steps article, .audit-checks span, .growth-faq-list details"
+    );
+    targets.forEach((target, index) => {
+      target.classList.add("motion-ready");
+      target.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      }),
+      { rootMargin: "0px 0px -8%", threshold: 0.12 }
+    );
+    targets.forEach((target) => observer.observe(target));
+
+    let frame = 0;
+    const updateScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        root.style.setProperty("--page-progress", `${max > 0 ? (window.scrollY / max) * 100 : 0}%`);
+      });
+    };
+    updateScroll();
+    window.addEventListener("scroll", updateScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateScroll);
+      cancelAnimationFrame(frame);
+    };
   }, []);
-  return null;
+  return <div className="growth-scroll-progress" aria-hidden="true" />;
 }
 
 export function GrowthAuditForm() {
