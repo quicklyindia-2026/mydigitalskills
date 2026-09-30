@@ -2,7 +2,9 @@
   "name": "mydigitalskills",
   "version": "0.1.0",
   "private": true,
-  "engines": { "node": "22.x" },
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "bash scripts/hostinger-build.sh",
@@ -19,7 +21,7 @@
     "drizzle-kit": "0.31.10",
     "drizzle-orm": "0.45.2",
     "mysql2": "^3.14.3",
-    "next": "16.2.6",
+    "next": "16.3.6",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "tailwindcss": "4.2.1",
