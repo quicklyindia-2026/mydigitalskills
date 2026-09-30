@@ -5,7 +5,7 @@ import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import { getDb } from "@/db";
 import { accounts, sessions } from "@/db/schema";
 
-export type ChatGPTUser = { displayName: string; email: string; fullName: string | null };
+export type ChatGPTUser = { displayName: string; email: string; fullName: string | null; role: string };
 const COOKIE = "mds_session";
 
 export function hashPassword(password: string) {
@@ -40,16 +40,22 @@ export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const token = (await cookies()).get(COOKIE)?.value;
   if (!token) return null;
   const now = new Date().toISOString();
-  const [row] = await getDb().select({ email: accounts.email, fullName: accounts.fullName })
+  const [row] = await getDb().select({ email: accounts.email, fullName: accounts.fullName, role: accounts.role })
     .from(sessions).innerJoin(accounts, eq(accounts.email, sessions.accountEmail))
     .where(and(eq(sessions.token, token), gt(sessions.expiresAt, now))).limit(1);
-  return row ? { email: row.email, fullName: row.fullName, displayName: row.fullName || row.email } : null;
+  return row ? { email: row.email, fullName: row.fullName, role: row.role, displayName: row.fullName || row.email } : null;
 }
 
 export async function requireChatGPTUser(returnTo: string) {
   const user = await getChatGPTUser();
   if (user) return user;
   redirect(chatGPTSignInPath(returnTo));
+}
+
+export async function requireAdminUser(returnTo = "/admin/lms") {
+  const user = await getChatGPTUser();
+  if (user?.role === "admin") return user;
+  redirect(`/admin/login?return_to=${encodeURIComponent(safePath(returnTo))}`);
 }
 
 export function chatGPTSignInPath(returnTo: string) { return `/login?return_to=${encodeURIComponent(safePath(returnTo))}`; }
